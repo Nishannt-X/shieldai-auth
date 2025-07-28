@@ -1,73 +1,96 @@
-# Welcome to your Lovable project
 
-## Project info
+# BankShield AI - Mobile App
 
-**URL**: https://lovable.dev/projects/f64bfe23-32e0-4cb0-bf5f-e69675645eb5
+AI-Powered Risk-Based Authentication Platform with native mobile capabilities.
 
-## How can I edit this code?
+## Development
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/f64bfe23-32e0-4cb0-bf5f-e69675645eb5) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Mobile Deployment
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+This project uses Capacitor to create native iOS and Android apps from the web application.
 
-**Use GitHub Codespaces**
+### Initial Setup
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+1. **Export to GitHub**: Use the "Export to GitHub" button in Lovable
+2. **Clone and Install**: 
+   ```bash
+   git clone <your-repo-url>
+   cd shieldai-auth
+   npm install
+   ```
 
-## What technologies are used for this project?
+### iOS Deployment
 
-This project is built with:
+1. **Add iOS platform** (requires macOS):
+   ```bash
+   npx cap add ios
+   ```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+2. **Build and sync**:
+   ```bash
+   npm run build
+   npx cap sync
+   ```
 
-## How can I deploy this project?
+3. **Run on iOS**:
+   ```bash
+   npx cap run ios
+   ```
 
-Simply open [Lovable](https://lovable.dev/projects/f64bfe23-32e0-4cb0-bf5f-e69675645eb5) and click on Share -> Publish.
+### Android Deployment
 
-## Can I connect a custom domain to my Lovable project?
+1. **Add Android platform**:
+   ```bash
+   npx cap add android
+   ```
 
-Yes, you can!
+2. **Build and sync**:
+   ```bash
+   npm run build
+   npx cap sync
+   ```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+3. **Run on Android**:
+   ```bash
+   npx cap run android
+   ```
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+### Available Scripts
+
+- `npm run cap:add-ios` - Add iOS platform
+- `npm run cap:add-android` - Add Android platform
+- `npm run cap:sync` - Sync web assets with native platforms
+- `npm run cap:run-ios` - Run on iOS simulator/device
+- `npm run cap:run-android` - Run on Android emulator/device
+- `npm run cap:open-ios` - Open iOS project in Xcode
+- `npm run cap:open-android` - Open Android project in Android Studio
+
+### Requirements
+
+- **iOS**: macOS with Xcode installed
+- **Android**: Android Studio with Android SDK
+
+### Hot Reload
+
+The app is configured for hot reload during development. Changes to your web code will automatically update in the mobile app.
+
+## Features
+
+- Risk-based authentication
+- Real-time security monitoring
+- RAG (Retrieval-Augmented Generation) challenges
+- Biometric authentication simulation
+- Mobile-optimized UI
+
+## Architecture
+
+- **Frontend**: React + TypeScript + Tailwind CSS
+- **Mobile**: Capacitor for native iOS/Android
+- **State Management**: React Query
+- **Routing**: React Router
+- **UI Components**: Radix UI + shadcn/ui
